@@ -1,50 +1,43 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
     defaultConfig {
-        applicationId "tk.victor_balssa.pintionary.apptest"
-        minSdkVersion 19
+        applicationId "tk.beerbomber.pintionary.app"
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        def host = InetAddress.getLocalHost().getCanonicalHostName()
+        debug {
+            // This will automatically detect the IP address of the machine building RealmTasks.
+            // It is assumed that this machine is also running the Object Server.
+            // If not, replace 'host' with the IP of the machine hosting the server.
+            buildConfigField "String", "OBJECT_SERVER_IP", "\"${host}\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // This will automatically detect the IP address of the machine building RealmTasks.
+            // It is assumed that this machine is also running the Object Server.
+            // If not, replace 'host' with the IP of the machine hosting the server.
+            buildConfigField "String", "OBJECT_SERVER_IP", "\"${host}\""
         }
     }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
-    //Realm
-    compile 'io.realm:realm-android:0.87.4'
-    //RxAndroid
-    compile 'io.reactivex:rxandroid:1.1.0'
-    compile 'io.reactivex:rxjava:1.1.0'
-    //RxBindings
-    compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-    //Retrofit
-    compile 'com.squareup.retrofit:retrofit:2.0.0-beta2'
-    //Retrofit Adapter and Converter
-    compile 'com.squareup.retrofit:adapter-rxjava:2.0.0-beta2'
-    compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
-    //Glide
-    compile 'com.github.bumptech.glide:glide:3.7.0'
-    //Databinding and Realm Annotations
-    kapt 'com.android.databinding:compiler:1.0-rc4'
-    kapt "io.realm:realm-annotations:0.87.4"
-    kapt "io.realm:realm-annotations-processor:0.87.4"
 }
-repositories {
-    mavenCentral()
+
+realm {
+    syncEnabled = true
 }
