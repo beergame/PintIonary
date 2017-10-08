@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PintIonary</string>
+    <string name="test">test</string>
+    <string name="beerdesc">BEER</string>
 </resources>
