@@ -2,4 +2,7 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="normal_icon_size">140</dimen>
+    <dimen name="normal_margin">20</dimen>
+    <dimen name="medium_margin">40</dimen>
 </resources>

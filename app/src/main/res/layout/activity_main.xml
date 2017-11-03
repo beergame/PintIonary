@@ -1,50 +1,51 @@
+
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:id="@+id/activity_main"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_holder"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="tk.beerbomber.pintionary.app.DrawingActivity">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <tk.beergame.pintionary.app.draw.MyCanvas
+        android:id="@+id/my_canvas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF">
+        android:background="@android:color/white"/>
 
-        <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+    <ImageView
+        android:id="@+id/eraser"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_toStartOf="@+id/color_picker"
+        android:padding="@dimen/normal_margin"
+        android:src="@drawable/beer"
+        android:contentDescription="test" />
 
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/color_picker"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_alignParentEnd="true"/>
 
-    <SurfaceView
-        android:id="@+id/surface_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"/>
+    <ImageView
+        android:id="@+id/undo"
+        android:layout_width="@dimen/normal_icon_size"
+        android:layout_height="@dimen/normal_icon_size"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/color_picker"
+        android:padding="@dimen/medium_margin"
+        android:src="@drawable/beer"
+        android:visibility="gone"/>
 
-    <RelativeLayout
-        android:id="@+id/drawingView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#919191">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true">
-
-            <ImageView android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/beer"
-                android:contentDescription="@string/beerdesc" />
-
-        </LinearLayout>
-    </RelativeLayout>
-
-</FrameLayout>
+    <com.simplemobiletools.commons.views.MySeekBar
+        android:id="@+id/stroke_width_bar"
+        android:layout_width="@dimen/stroke_bar_size"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:max="75"
+        android:padding="@dimen/medium_margin"
+        android:progress="5"
+        android:visibility="gone"/>
+</RelativeLayout>
