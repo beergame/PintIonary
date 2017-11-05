@@ -1,4 +1,4 @@
-package tk.beerbomber.pintionary.app.models
+package tk.beergame.pintionary.app.models
 
 import io.realm.RealmObject
 

@@ -1,51 +1,41 @@
-
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
+    android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_holder"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <tk.beergame.pintionary.app.draw.MyCanvas
-        android:id="@+id/my_canvas"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"/>
+        android:background="#FFFFFF">
+    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/eraser"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_toStartOf="@+id/color_picker"
-        android:padding="@dimen/normal_margin"
-        android:src="@drawable/beer"
-        android:contentDescription="test" />
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"/>
 
-    <ImageView
-        android:id="@+id/color_picker"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_alignParentEnd="true"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/undo"
-        android:layout_width="@dimen/normal_icon_size"
-        android:layout_height="@dimen/normal_icon_size"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/color_picker"
-        android:padding="@dimen/medium_margin"
-        android:src="@drawable/beer"
-        android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            tools:ignore="UselessLeaf">
 
-    <com.simplemobiletools.commons.views.MySeekBar
-        android:id="@+id/stroke_width_bar"
-        android:layout_width="@dimen/stroke_bar_size"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="12dp"
-        android:max="75"
-        android:padding="@dimen/medium_margin"
-        android:progress="5"
-        android:visibility="gone"/>
-</RelativeLayout>
+            <Button
+                android:id="@+id/btn_clean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clean_drawing"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

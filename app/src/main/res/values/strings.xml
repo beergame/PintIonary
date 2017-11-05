@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">PintIonary</string>
-    <string name="test">test</string>
     <string name="beerdesc">BEER</string>
+    <string name="clean_drawing">Clean it!</string>
 </resources>

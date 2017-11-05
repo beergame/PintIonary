@@ -1,4 +1,4 @@
-package tk.beerbomber.pintionary.app
+package tk.beergame.pintionary.app
 
 import android.app.Application
 import io.realm.Realm
