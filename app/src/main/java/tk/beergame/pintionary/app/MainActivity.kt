@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        createUserIfNeededAndAndLogin()
+        createUserIfNeededAndLogin()
 
         surfaceView = findViewById(R.id.surface_view) as SurfaceView
         surfaceView!!.holder.addCallback(this@MainActivity)
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), SurfaceHolder.Callback {
         }
     }
 
-    private fun createUserIfNeededAndAndLogin() {
+    private fun createUserIfNeededAndLogin() {
         val syncCredentials = SyncCredentials.usernamePassword(ID, PASSWORD, false)
 
         SyncUser.loginAsync(syncCredentials, AUTH_URL, object : SyncUser.Callback<SyncUser> {
