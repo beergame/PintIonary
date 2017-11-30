@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:visibility="visible">
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="420dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerInside"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/beer"
+        android:contentDescription="@string/logo" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="@string/un_joli_titre"
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/edLogin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/tvTitle"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:hint="@string/adresse_mail"
+        android:inputType="text"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/edLogin"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:hint="@string/mot_de_passe"
+        android:inputType="textPassword"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/tvConnect"
+        android:layout_width="264dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/edPassword"
+        android:layout_alignStart="@+id/edPassword"
+        android:layout_below="@+id/edPassword"
+        android:layout_marginTop="36dp"
+        android:background="#FFB612"
+        android:gravity="center"
+        android:text="@string/connexion"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
